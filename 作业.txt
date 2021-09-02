@@ -1,0 +1,13 @@
+Map<String,Object> userInfoMap=new HashMap<>();
+UserInfo userInfo=new UserInfo();
+
+if(userInfoMap.size==1){
+String string=JSON.toJSONString(userInfoMap);
+UserInfo user=JSON.parseObject(string,UserInfo.class);
+}else{
+for(String key: userInfoMap.keyset(){
+Map<String,Object> map=new HashMap();
+map.put(key,userInfoMap.get(key));
+String string=JSON.toJSONString(map);
+UserInfo user=JSON.parseObject(string,UserInfo.class);
+}
